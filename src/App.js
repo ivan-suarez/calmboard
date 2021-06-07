@@ -5,6 +5,7 @@ import Replybox from './Replybox';
 function App() {
   return (
     <div className="App">
+      <h1>Calmboard</h1>
       <Feed/>
       <Replybox/>
     </div>
