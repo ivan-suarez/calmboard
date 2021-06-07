@@ -4,8 +4,14 @@ import "./Feed.css"
 
 function Feed(){
     return(
+        
         <div class="feed">
-            <Post/>
+            <Post 
+            name="Ivan"
+            date="06/07/21(Mon)"
+            hour="04:12:21"
+            number="23234243324"
+            text="heyyyy this is a post" />
             <Post/>
             <Post/>
             <Post/>

@@ -1,11 +1,15 @@
 import React from 'react';
 import "./Post.css"
 
-function Post(){
+function Post({name, date, hour, number, text}){
     return(
         <div class="post">
-            <p>Anonymous 06/07/21(Mon) 04:12:21 No. 23234243324</p>
-            <p>This is a post</p>
+            <div class="post__header">
+                <p>{name} {date} {hour} No. {number}</p>
+            </div>
+            <div class="post__body">
+                <p>{text}</p>
+            </div> 
         </div>
     );
 }
