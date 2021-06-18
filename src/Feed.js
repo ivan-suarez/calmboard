@@ -1,8 +1,11 @@
 import React from 'react';
 import Post from './Post';
 import "./Feed.css"
+import axios from 'axios';
 
 function Feed(){
+    
+
     return(
         
         <div class="feed">
