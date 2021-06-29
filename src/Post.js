@@ -1,29 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./Post.css"
-import axios from "./axios";
 
-function Post({name, date, hour, number, text}){
-    const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-        async function fetchData(){
-            const req = await axios.get("/posts");
-            
-            setPosts(req.data);
-        }
-
-        fetchData();
-    }, []);
-    /** I don't know if this works... */
-
+function Post(props){
 
     return(
         <div class="post">
             <div class="post__header">
-                <p>{name} {date} {hour} No. {number}</p>
+                <p>{props.post.name} {props.post.date} {props.post.hour} No. {props.post.number}</p>
             </div>
             <div class="post__body">
-                <p>{text}</p>
+                <p>{props.post.text}</p>
             </div> 
         </div>
     );

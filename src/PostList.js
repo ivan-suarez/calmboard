@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import Post from './Post'
 
 export default class PostList extends React.Component{
     state = {posts: []}
@@ -14,9 +15,12 @@ export default class PostList extends React.Component{
 
     render(){
         return (
+            /** {this.state.posts.map(post => <span>{post.text}</span>)}*/
             <div>
                 <p>Prueba</p>
-                {this.state.posts.map(post => <span>{post.text}</span>)}
+                
+                {this.state.posts.map(post => <Post post={post}/>)}
+                
             </div>
         )
     }
