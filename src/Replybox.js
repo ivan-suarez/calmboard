@@ -10,13 +10,14 @@ export default class Replybox extends React.Component{
         text: ""
     }
 
-    handleChange = event => {
-        console.log("changeess")
+    handleChangeName = event => {
         this.setState({name: event.target.value});
+    }
+    handleChangeText = event => {
+        this.setState({text: event.target.value});
     }
     handleSubmit = event => {
         event.preventDefault();
-        console.log("it workkksss")
         const post = {
             name: this.state.name,
             date: this.state.date,
@@ -25,8 +26,9 @@ export default class Replybox extends React.Component{
             text: this.state.text,
             
         };
-        axios.post("http://localhost:8001/posts", {post}).then(
+        axios.post("http://localhost:8001/posts", post).then(
             res => {
+            console.log(post)
             console.log(res);
             console.log(res.data);
         })
@@ -39,8 +41,9 @@ export default class Replybox extends React.Component{
         <div>
             <h3>This is the Reply Box</h3>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="text" onChange={this.handleChange} />
-                <button type="submit">Post</button>
+                <input type="text" name="name" onChange={this.handleChangeName} />
+                <input type="text" name="text" onChange={this.handleChangeText} />
+                <button type="submit" onClick={this.handleSubmit}>Post</button>
             </form>
         </div>
     )
