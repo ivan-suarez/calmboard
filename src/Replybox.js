@@ -1,14 +1,21 @@
 import React from 'react';
 import axios from 'axios';
+import "./Replybox.css"
 
 export default class Replybox extends React.Component{
-    state = {
-        name: 'Anonymous',
-        date: "01/01/19",
-        hour: "23:04:23",
-        number: 1,
-        text: ""
+
+    constructor(){
+        super()
+        this.state = {
+            name: 'Anonymous',
+            date: "01/01/19",
+            hour: "23:04:23",
+            number: 1,
+            text: ""
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
+   
 
     handleChangeName = event => {
         let nameVar = event.target.value
@@ -20,21 +27,19 @@ export default class Replybox extends React.Component{
         this.setState({text: event.target.value});
     }
 
-    textCountAdd = () => {
-        let num = this.state.number
-        num++
-        this.setState({number: num})
-    }
+    
     handleSubmit = event => {
         event.preventDefault();
 
         let time = new Date()
         let today = time.getUTCDay()+"/"+time.getUTCMonth() + "/" + time.getUTCFullYear()
         let now = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds()
-        console.log(today)
-        console.log(now)
-        
-        this.textCountAdd()
+       
+        console.log(this.state.number)
+        this.setState({number: this.state.number+1})
+        console.log(this.state.number)
+        console.log(this.state.number+1)
+
         const post = {
             name: this.state.name,
             date: today,
@@ -55,11 +60,17 @@ export default class Replybox extends React.Component{
 
     render(){
     return(
-        <div>
+        <div class="replyBox">
             <h3>This is the Reply Box</h3>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="name" onChange={this.handleChangeName} />
-                <input type="text" name="text" onChange={this.handleChangeText} />
+                <div>
+                <span>Name: </span>
+                <input type="text" name="name" maxlength="15" onChange={this.handleChangeName} />
+                </div>
+                <div>
+                <span>Text: </span>
+                <input type="text" name="text" maxlength="240" onChange={this.handleChangeText} />
+                </div>
                 <button type="submit" onClick={this.handleSubmit}>Post</button>
             </form>
         </div>
