@@ -17,7 +17,6 @@ export default class PostList extends React.Component{
         return (
             /** {this.state.posts.map(post => <span>{post.text}</span>)}*/
             <div>
-                <p>Prueba</p>
                 
                 {this.state.posts.map(post => <Post post={post}/>)}
                 

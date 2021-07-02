@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  margin-top: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: white;
+}
+
+body {
+  background-color: #E9C49E;
+}
+
+.title {
+  color: #524231;
+  text-align: left;
 }
 
 .App-logo {

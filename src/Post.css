@@ -1,4 +1,23 @@
 .post {
-    background-color: grey;
+    background-color: white;
     max-width: fit-content;
+    min-width: 400px;
+    margin: 20px;
+    
+}
+
+.post__header{
+    text-align: left;
+    background-color: #eee6cc;
+}
+
+.post__body {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    border-color: #eee6cc;
+    
+    border-style: solid;
+    
 }
