@@ -62,7 +62,7 @@ export default class Replybox extends React.Component{
     return(
         <div class="replyBox">
             <form onSubmit={this.handleSubmit}>
-                <div>
+                <div class="reply__header">
                 <span>Name: </span>
                 <input type="text" name="name" maxlength="15" onChange={this.handleChangeName} />
                 <button type="submit" onClick={this.handleSubmit}>Post</button>
